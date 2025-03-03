@@ -1,0 +1,82 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZFH Messenger</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-screen" id="login-screen">
+    <div class="login-container">
+      <div class="login-header">
+        <div class="radiation-symbol"></div>
+        <h1>ZFH MESSENGER</h1>
+        <div class="radiation-symbol"></div>
+      </div>
+      <div class="login-form">
+        <div class="crt-overlay"></div>
+        <div class="form-group">
+          <label for="username">ENTER IDENTIFIER:</label>
+          <input type="text" id="username" maxlength="15" autocomplete="off">
+        </div>
+        <button id="login-btn" class="btn">CONNECT</button>
+        <div class="login-footer">
+          <span class="blink">OLYMPIC PENINSULA EMERGENCY COMMS NETWORK</span>
+          <span class="version">v0.9.7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="messenger" id="messenger">
+    <div class="terminal-header">
+      <div class="header-left">
+        <div class="terminal-icon"></div>
+        <h2>ZFH MESSENGER</h2>
+      </div>
+      <div class="header-right">
+        <div class="status">
+          <span class="status-light"></span>
+          <span id="connection-status">CONNECTED</span>
+        </div>
+        <div class="user-info">
+          <span>ID: </span>
+          <span id="current-user"></span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="terminal-container">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h3>ACTIVE USERS</h3>
+        </div>
+        <ul id="users-list" class="users-list"></ul>
+        <div class="sidebar-footer">
+          <div class="battery">
+            <div class="battery-level"></div>
+          </div>
+          <div class="time" id="current-time">00:00:00</div>
+        </div>
+      </div>
+      
+      <div class="terminal">
+        <div class="crt-overlay"></div>
+        <div class="message-container" id="message-container"></div>
+        
+        <div class="input-container">
+          <span class="prompt">></span>
+          <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+          <button id="send-btn" class="btn">SEND</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
